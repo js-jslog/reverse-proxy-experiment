@@ -1,0 +1,9 @@
+[submodule "nodock"]
+	path = nodock
+	url = https://github.com/Osedea/nodock.git
+[submodule "hello1"]
+	path = hello1
+	url = https://github.com/js-jslog/hello-world-node-express.git
+[submodule "hello2"]
+	path = hello2
+	url = https://github.com/js-jslog/hello-world-node-express.git
