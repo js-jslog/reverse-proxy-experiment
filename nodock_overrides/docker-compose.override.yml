@@ -1,0 +1,34 @@
+version: '3.3'
+
+services:
+
+    hello1:
+        build:
+            context: ./node
+            args:
+                - NODE_VERSION=latest
+                - PROJECT_PATH=/opt/app/
+                - NODE_ENV=production
+                - YARN=false
+        volumes:
+            - ../hello1/:/opt/app
+        entrypoint: run-nodock "node app.js"
+        tty: true
+
+    hello2:
+        build:
+            context: ./node
+            args:
+                - NODE_VERSION=latest
+                - PROJECT_PATH=/opt/app/
+                - NODE_ENV=production
+                - YARN=false
+        volumes:
+            - ../hello2/:/opt/app
+        entrypoint: run-nodock "node app.js"
+        tty: true
+
+    nginx:
+        build:
+            args:
+                - WEB_REVERSE_PROXY_PORT=3000
