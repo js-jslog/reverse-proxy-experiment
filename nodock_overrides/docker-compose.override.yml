@@ -10,6 +10,10 @@ services:
                 - PROJECT_PATH=/opt/app/
                 - NODE_ENV=production
                 - YARN=false
+        environment:
+            - ROUTE=hello1
+            - HELLO_MESSAGE=hello1
+            - PORT=3000
         volumes:
             - ../hello1/:/opt/app
         entrypoint: run-nodock "node app.js"
@@ -23,6 +27,10 @@ services:
                 - PROJECT_PATH=/opt/app/
                 - NODE_ENV=production
                 - YARN=false
+        environment:
+            - ROUTE=hello2
+            - HELLO_MESSAGE=hello2
+            - PORT=3000
         volumes:
             - ../hello2/:/opt/app
         entrypoint: run-nodock "node app.js"
